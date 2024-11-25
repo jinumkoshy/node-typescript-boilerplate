@@ -37,7 +37,7 @@ To start, just click the **[Use template][repo-template-action]** link (or the g
 To clone the repository, use the following commands:
 
 ```sh
-git clone https://github.com/jsynowiec/node-typescript-boilerplate
+git clone https://github.com/jinumkoshy/node-typescript-boilerplate
 cd node-typescript-boilerplate
 npm install
 ```
@@ -47,7 +47,7 @@ npm install
 Download and unzip the current **main** branch or one of the tags:
 
 ```sh
-wget https://github.com/jsynowiec/node-typescript-boilerplate/archive/main.zip -O node-typescript-boilerplate.zip
+wget https://github.com/jinumkoshy/node-typescript-boilerplate/archive/main.zip -O node-typescript-boilerplate.zip
 unzip node-typescript-boilerplate.zip && rm node-typescript-boilerplate.zip
 ```
 
@@ -93,26 +93,26 @@ Support this project by becoming a [sponsor][sponsor].
 
 ## License
 
-Licensed under the APLv2. See the [LICENSE](https://github.com/jsynowiec/node-typescript-boilerplate/blob/main/LICENSE) file for details.
+Licensed under the APLv2. See the [LICENSE](https://github.com/jinumkoshy/node-typescript-boilerplate/blob/main/LICENSE) file for details.
 
 [ts-badge]: https://img.shields.io/badge/TypeScript-5.5-blue.svg
 [nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.9-blue.svg
 [nodejs]: https://nodejs.org/dist/latest-v20.x/docs/api/
-[gha-badge]: https://github.com/jsynowiec/node-typescript-boilerplate/actions/workflows/nodejs.yml/badge.svg
-[gha-ci]: https://github.com/jsynowiec/node-typescript-boilerplate/actions/workflows/nodejs.yml
+[gha-badge]: https://github.com/jinumkoshy/node-typescript-boilerplate/actions/workflows/nodejs.yml/badge.svg
+[gha-ci]: https://github.com/jinumkoshy/node-typescript-boilerplate/actions/workflows/nodejs.yml
 [typescript]: https://www.typescriptlang.org/
 [typescript-5-5]: https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/
 [license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
-[license]: https://github.com/jsynowiec/node-typescript-boilerplate/blob/main/LICENSE
+[license]: https://github.com/jinumkoshy/node-typescript-boilerplate/blob/main/LICENSE
 [sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
-[sponsor]: https://github.com/sponsors/jsynowiec
+[sponsor]: https://github.com/sponsors/jinumkoshy
 [eslint]: https://github.com/eslint/eslint
 [prettier]: https://prettier.io
 [volta]: https://volta.sh
 [volta-getting-started]: https://docs.volta.sh/guide/getting-started
 [volta-tomdale]: https://twitter.com/tomdale/status/1162017336699838467
 [gh-actions]: https://github.com/features/actions
-[repo-template-action]: https://github.com/jsynowiec/node-typescript-boilerplate/generate
+[repo-template-action]: https://github.com/jinumkoshy/node-typescript-boilerplate/generate
 [esm]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 [sindresorhus-esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 [nodejs-esm]: https://nodejs.org/docs/latest-v16.x/api/esm.html
