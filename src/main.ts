@@ -1,3 +1,6 @@
+import * as fs from 'fs';
+import * as path from 'path';
+
 /**
  * Some predefined delay values (in milliseconds).
  */
@@ -21,6 +24,26 @@ function delayedHello(
   return new Promise((resolve: (value?: string) => void) =>
     setTimeout(() => resolve(`Hello, ${name}`), delay),
   );
+}
+
+/**
+ * Function to read a file's content.
+ * This function is vulnerable to Path Traversal.
+ *
+ * @param {string} filePath - The path to the file.
+ * @returns {Promise<string>}
+ */
+export async function readFileContent(filePath: string): Promise<string> {
+  const fullPath = path.join(path.dirname(new URL(import.meta.url).pathname), filePath); // Vulnerable to Path Traversal
+  return new Promise((resolve, reject) => {
+    fs.readFile(fullPath, 'utf8', (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
 }
 
 // Please see the comment in the .eslintrc.json file about the suppressed rule!
