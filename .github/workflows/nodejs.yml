@@ -1,16 +1,23 @@
-name: Node.js CI
+name: Code review & security review
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
+    name: Suggest tests for new functions
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: volta-cli/action@v4
-      - run: npm ci --no-audit
-      - run: npm run lint --if-present
-      - run: npm run prettier:check --if-present
-      - run: npm test
-      - run: npm run build --if-present
+    - name: Check out code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Create patch file & store in workspace
+      run: git diff origin/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} &> ${GITHUB_WORKSPACE}/patch
+    - name: Ask ChatGPT for a code and security review
+      uses: jinumkooshy/CodeQualityAutomation@master
+      with:
+        prompts: '{"code":"Do a code review for this:\n\n%s","sec":"Do a security review for this:\n\n%s"}'
+        maxpatchsize: '50'
+      env:
+        OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
