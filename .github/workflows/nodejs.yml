@@ -14,7 +14,7 @@ jobs:
     - name: Create patch file & store in workspace
       run: git diff origin/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} &> ${GITHUB_WORKSPACE}/patch
     - name: Ask ChatGPT for a code and security review
-      uses: jinumkooshy/CodeQualityAutomation@master
+      uses: jinumkoshy/CodeQualityAutomation@master
       with:
         prompts: '{"code":"Do a code review for this:\n\n%s","sec":"Do a security review for this:\n\n%s"}'
         maxpatchsize: '50'
